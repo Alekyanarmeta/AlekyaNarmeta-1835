@@ -1,0 +1,157 @@
+<html>
+    <head>
+        <title>
+            calculator-css
+        </title>
+    </head>
+    <style>
+        .totalvalue{
+         font-size:40px;
+         font-family:Arial;
+         margin-top:20px;
+        margin-bottom:20px;
+        }
+        body{
+            background-color:black;
+            color:white;
+        }
+        .js-value
+        {
+            height:70px;
+            width:70px;
+            border-radius:40px;
+            border:none;
+            background-color: rgb(30,30,30);
+            color:white;
+            font-size:25px;
+            font-weight:bold;
+            margin-right:10px;
+        }
+        .js-value1
+        {
+            height:70px;
+            width:70px;
+            border-radius:40px;
+            border:none;
+            background-color:rgb(225, 135, 25);
+            color:white;
+            font-size:25px;
+            font-weight:bold;
+            margin-right:10px;
+        }
+        .js-value2
+        {
+            height:70px;
+            width:70px;
+            border-radius:40px;
+            border:none;
+            background-color: rgb(30,30,30);
+            color:white;
+            font-size:15px;
+            font-weight:bold;
+            margin-right:10px;
+        }
+        .totalvalue1
+        {
+            font-size:20px;
+            color:grey;
+            margin:15px;
+
+        }
+    </style>
+    <body>
+        <p class="totalvalue"></p>
+        <p class="totalvalue1"></p>
+        <p>
+          <button onclick="
+            calculator('1');
+            calculator1();
+            "class="js-value">1</button>
+          <button onclick="
+          calculator('2');
+          calculator1();
+          "class="js-value">2</button>
+          <button onclick="
+          calculator('3');
+          calculator1();
+          "class="js-value">3</button>
+          <button onclick="
+          calculator('+');
+          "class="js-value1">+</button>
+        </p>
+        <p>
+            <button onclick="
+              calculator('4');
+              calculator1();
+              "class="js-value">4</button>
+            <button onclick="
+            calculator('5');
+            calculator1();
+            "class="js-value">5</button>
+            <button onclick="
+            calculator('6');
+            calculator1();
+            "class="js-value">6</button>
+            <button onclick="
+            calculator('-');
+            "class="js-value1">-</button>
+          </p>
+          <p>
+            <button onclick="
+              calculator('7');
+              calculator1();
+              "class="js-value">7</button>
+            <button onclick="
+            calculator('8');
+            calculator1();
+            "class="js-value">8</button>
+            <button onclick="
+            calculator('9');
+            calculator1();
+            "class="js-value">9</button>
+            <button onclick="
+            calculator('*');
+            "class="js-value1">*</button>
+          </p>
+          <p>
+            <button onclick="
+              calculator('0');
+              calculator1();
+              "class="js-value">0</button>
+            <button onclick="
+            calculator('.');
+            
+            "class="js-value">.</button>
+            <button onclick="
+            cal=eval(cal);
+            document.querySelector('.totalvalue').innerHTML=cal;
+            calculator1();
+           localStorage.setItem('cal',cal);
+            "class="js-value">=</button>
+            <button onclick="
+            calculator('/');
+            "class="js-value1">/</button>
+          </p>
+          <p>
+            <button onclick="
+             cal='';
+             localStorage.setItem('cal',cal);
+             document.querySelector('.totalvalue').innerHTML=cal;
+              "class="js-value2">clear</button>
+          </p>
+          
+        <script>
+            let cal=localStorage.getItem('cal')||'';
+            function calculator(value)
+            {
+                cal+=value;
+                document.querySelector(".totalvalue").innerHTML=cal;
+            }
+            function calculator1()
+            {
+               cal=eval(cal);
+               document.querySelector(".totalvalue1").innerHTML=cal;
+            }
+        </script>
+    </body>
+</html>
